@@ -1,5 +1,5 @@
 import React from 'react';
-import { Content, Row, Col, Divider } from 'rsuite';
+import { Content, Row, Col } from 'rsuite';
 import Banner1 from '../assets/pic1.jpg';
 import Banner2 from '../assets/pic2.jpg';
 
