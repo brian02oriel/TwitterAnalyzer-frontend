@@ -30,7 +30,8 @@ const headerStyles = {
     containerStyle: {
         width: '100vw',
         height: '75vh',
-        border: '1px solid black',
+        //border: '1px solid black',
+        border: '1px solid #1DA1F2',
         textAlign: 'center',
         display: 'flex',
         flexDirection: 'column',

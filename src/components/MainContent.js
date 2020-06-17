@@ -1,7 +1,7 @@
 import React from 'react';
 import { Content, Row, Col } from 'rsuite';
-import Banner1 from '../assets/pic1.jpg';
-import Banner2 from '../assets/pic2.jpg';
+import Banner1 from '../assets/img/pic1.jpg';
+import Banner2 from '../assets/img/pic2.jpg';
 
 const MainContent = () => {
     const { containerStyle, imageContainerStyle, textContainerStyle,
@@ -55,35 +55,35 @@ const MainContent = () => {
 
 const contentStyles = {
     constainerStyle:{
-        border: '1px solid black',
+        //border: '1px solid black',
         textAlign: 'center',
     },
     imageContainerStyle:{
         textAlign: 'left',
-        border: '1px solid grey',
+        //border: '1px solid grey',
 
     },
     textContainerStyle:{
         paddingTop: '6%',
         paddingBottom:'6%',
-        border: '1px solid grey',
+        //border: '1px solid grey',
         fontSize: '1em',
         textAlign: 'left',
     },
     textStyle:{
         padding:'3%',
-        border: '1px solid blue',
+        //border: '1px solid blue',
     },
     textContainerStyle2:{
         paddingTop: '8.85%',
         paddingBottom:'9%',
-        border: '1px solid grey',
+        //border: '1px solid grey',
         fontSize: '1em',
         textAlign: 'left',
     },
     textStyle2:{
         padding:'3%',
-        border: '1px solid blue',
+        //border: '1px solid blue',
     },
     quoteContainerStyle:{
         padding: '3%',
