@@ -1,8 +1,10 @@
 
 import React from 'react';
-import { Header, FlexboxGrid, Input, InputGroup, Icon, Row, Col } from 'rsuite';
+import { Header, FlexboxGrid } from 'rsuite';
+import MainForm from './MainForm';
+
 const MainHeader = () => {
-    const { containerStyle, inputContainerStyle, inputStyle, iconStyle } = headerStyles
+    const { containerStyle} = headerStyles
     return (
         <FlexboxGrid justify="center">
             <Header style={containerStyle}>
@@ -10,17 +12,7 @@ const MainHeader = () => {
                 <h2> SubHeader </h2>
                 <br/>
                 <p> Description </p>
-                <Row style={inputContainerStyle}>
-                    <Col>
-                        <InputGroup inside>
-                            <Input size="lg" style={inputStyle}/>
-                            <InputGroup.Button style={iconStyle}>
-                                <Icon icon="search" />
-                            </InputGroup.Button>
-                        </InputGroup>
-                    </Col>
-                </Row>
-                        
+                <MainForm />        
             </Header>
         </FlexboxGrid>
     );
@@ -37,21 +29,6 @@ const headerStyles = {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center'
-    },
-
-    inputContainerStyle:{
-        padding:'2%',
-        margin: '2%'
-    },
-
-    inputStyle:{
-        borderRadius: '50px'
-    },
-    iconStyle:{
-        borderRadius: '50px',
-        display:'block',
-        margin: '3px',
-        padding: '-2px'
     }
 
 }
