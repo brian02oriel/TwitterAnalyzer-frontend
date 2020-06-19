@@ -28,7 +28,7 @@ const MainContent = () => {
                 <Col sm={24} style={quoteContainerStyle}>
                     <div style={quoteContainerContent}>
                         <blockquote cite="https://www.sethgodin.com/">
-                            <p>“Las conversaciones entre los miembros de tu nicho ocurren, te guste o no. El buen marketing alienta el tipo de conversación correcta.”.</p>
+                            <p>“Las conversaciones entre los miembros de tu nicho ocurren, te guste o no. El buen marketing alienta el tipo de conversación correcta.”</p>
                             <br/>
                             <footer style={{fontSize: '2.1vmax'}}>—Seth Godin</footer>
                         </blockquote>
