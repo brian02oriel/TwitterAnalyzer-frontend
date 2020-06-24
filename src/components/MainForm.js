@@ -1,19 +1,23 @@
-import React, {useState }from 'react';
+import React, { useState }from 'react';
 import { Input, InputGroup, Icon, IconButton, Row, Col } from 'rsuite';
 import axios from 'axios'
 
-const MainForm = () => {
+const MainForm = ({getData, isLoading}) => {
     const { inputContainerStyle, inputStyle, inputGroupButton, iconButtonStyle } = mainFormStyles
     const [state, setState] = useState({
-        keywords: ""
+        keywords: "",
     })
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        isLoading(true)
         axios.post('http://127.0.0.1:5000/api/twitter', {
             keywords: state.keywords
         }).then(function(res){
-            console.log(res)
+            console.log(res.data)
+            getData(res.data)
+            isLoading(false)
+            setState(prevState => ({...prevState, keywords: ''}))
         }).catch(function(error){
             console.log(error)
         })
@@ -26,7 +30,7 @@ const MainForm = () => {
     }
 
 
-    console.log("State: ", state)
+    //console.log("form state: ", state)
 
     return (
         <Row style={inputContainerStyle}>

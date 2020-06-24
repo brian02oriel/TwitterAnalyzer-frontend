@@ -3,7 +3,7 @@ import React from 'react';
 import { Header, FlexboxGrid } from 'rsuite';
 import MainForm from './MainForm';
 
-const MainHeader = () => {
+const MainHeader = ({getData, isLoading}) => {
     const { containerStyle} = headerStyles
     return (
         <FlexboxGrid justify="center">
@@ -12,7 +12,7 @@ const MainHeader = () => {
                 <h2> SubHeader </h2>
                 <br/>
                 <p> Description </p>
-                <MainForm />        
+                <MainForm getData={getData} isLoading={isLoading}/>        
             </Header>
         </FlexboxGrid>
     );

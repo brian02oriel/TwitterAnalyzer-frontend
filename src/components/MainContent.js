@@ -1,15 +1,17 @@
-import React from 'react';
-import { Content, Row, Col } from 'rsuite';
+import React, { Fragment } from 'react';
+import { Content, Row, Col, Loader } from 'rsuite';
 import Banner1 from '../assets/img/pic1.jpg';
 import Banner2 from '../assets/img/pic2.jpg';
 
-const MainContent = () => {
+const MainContent = ({loading}) => {
     const { containerStyle, imageContainerStyle, textContainerStyle,
             textStyle, textContainerStyle2, textStyle2, quoteContainerStyle, 
-            quoteContainerContent } = contentStyles
+            quoteContainerContent, loadingStyle } = contentStyles
     return (
         <Content style={containerStyle}>
-            <Row>
+            { !loading &&
+                <Fragment>
+                <Row>
                 <Col md={12} sm={24} style={imageContainerStyle}>
                     <img src={Banner1} alt="People together" width="100%" height="auto"/>
                 </Col>
@@ -49,6 +51,17 @@ const MainContent = () => {
                     <img src={Banner2} alt="People liked" width="100%" height="auto"/>
                 </Col>
             </Row>
+            </Fragment>
+            }
+            {
+                loading &&
+                <Row>
+                    <Col sm={24} style={loadingStyle}>
+                        <Loader size="lg" vertical content="Cargando..." />
+                    </Col>
+                </Row>
+
+            }
         </Content>
     );
 };
@@ -92,6 +105,16 @@ const contentStyles = {
     quoteContainerContent:{
         padding: '3%',
         backgroundColor: '#FFFFFF'
+    },
+    loadingStyle:{
+        width: '100vw',
+        height: '75vh',
+        padding: '3%',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center'
+
     }
 
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container } from 'rsuite';
 import MainHeader from './MainHeader';
 import MainContent from './MainContent';
@@ -6,10 +6,24 @@ import MainFooter from './MainFooter';
 
 const Main = (props) => {
     const { containerStyle } = mainStyles
+    const [state, setState] = useState({
+        data:'',
+        loading: false
+    })
+
+    const getData = (data) =>{
+        setState(prevState =>({...prevState, data}))
+    }
+
+    const isLoading = (loading) =>{
+        setState(prevState =>({...prevState, loading}))
+    }
+
+    console.log('main state: ', state)
     return (
        <Container style={containerStyle}>
-           <MainHeader/>
-           <MainContent/>
+           <MainHeader getData={getData} isLoading={isLoading}/>
+           <MainContent loading={state.loading}/>
            <MainFooter/>
        </Container>
     );
