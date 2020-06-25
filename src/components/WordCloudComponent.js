@@ -1,0 +1,24 @@
+import React, { useRef } from 'react';
+import ReactWordcloud from 'react-wordcloud'
+
+const WordCloudComponent = ({data}) => {
+    
+    return (
+        <ReactWordcloud
+            words={data}
+            callbacks ={{
+                getWordColor: ({value}) =>{
+                    if(value > 30){
+                        return '#1da1f2'
+                    } else if(value >= 10 && value <= 30){
+                        return '#002e63'
+                    } else {
+                        return '#aab8c2'
+                    }
+                }
+            }}
+        />
+    );
+};
+
+export default WordCloudComponent;

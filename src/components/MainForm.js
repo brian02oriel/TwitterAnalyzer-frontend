@@ -14,8 +14,9 @@ const MainForm = ({getData, isLoading}) => {
         axios.post('http://127.0.0.1:5000/api/twitter', {
             keywords: state.keywords
         }).then(function(res){
-            console.log(res.data)
-            getData(res.data)
+            let data = res.data
+            console.log(data.words_freq)
+            getData(data)
             isLoading(false)
             setState(prevState => ({...prevState, keywords: ''}))
         }).catch(function(error){

@@ -10,6 +10,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
+    "react-wordcloud": "^1.2.3",
     "rsuite": "^4.7.4"
   },
   "scripts": {

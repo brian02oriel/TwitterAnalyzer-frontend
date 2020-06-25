@@ -7,7 +7,7 @@ import MainFooter from './MainFooter';
 const Main = (props) => {
     const { containerStyle } = mainStyles
     const [state, setState] = useState({
-        data:'',
+        data:{},
         loading: false
     })
 
@@ -19,11 +19,11 @@ const Main = (props) => {
         setState(prevState =>({...prevState, loading}))
     }
 
-    console.log('main state: ', state)
+    console.log('main state: ', state.data)
     return (
        <Container style={containerStyle}>
            <MainHeader getData={getData} isLoading={isLoading}/>
-           <MainContent loading={state.loading}/>
+           <MainContent loading={state.loading}  data={state.data}/>
            <MainFooter/>
        </Container>
     );
