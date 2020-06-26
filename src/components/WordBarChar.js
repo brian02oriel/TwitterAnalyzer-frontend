@@ -12,14 +12,14 @@ const WordBarChar = ({data}) => {
         return topten
     }
     return (
-        <div style={{ width: '100%', height: '300', padding: '1%' }}>
+        <div style={{ width: '100%', height: 400 }}>
             <ResponsiveContainer>
             <BarChart
                 width={500}
-                height={300}
+                height={400}
                 data={TopTen(data)}
                 margin={{
-                top: 0, right: 30, left: 20, bottom: 10,
+                top: 5, right: 30, left: 20, bottom: 20,
                 }}
             >
             <CartesianGrid strokeDasharray="3 3" />

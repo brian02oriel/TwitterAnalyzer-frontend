@@ -11,7 +11,7 @@ const MainContent = ({loading, data, keywords}) => {
             textStyle, textContainerStyle2, textStyle2, quoteContainerStyle, 
             quoteContainerContent, loadingStyle } = contentStyles
     const scrollRef = useRef(null)
-    
+
     useEffect(() =>{
         console.log('effect executed: ', loading)
         if(loading){
@@ -97,7 +97,7 @@ const MainContent = ({loading, data, keywords}) => {
                         </div>
                     </Col>
                 </Row>
-                <Row>
+                <Row >
                     <Col md={12} sm={24} style={textContainerStyle}>
                         <div style={textStyle}>
                             <p> 
@@ -107,7 +107,7 @@ const MainContent = ({loading, data, keywords}) => {
                         </div>
                         
                     </Col>
-                    <Col md={12} sm={24} style={textContainerStyle}>
+                    <Col md={12} sm={24} style={{ paddingBottom:'3%'}}>
                         {<WordBarChar data={data.words_freq}/>}
                     </Col>
                 </Row>
