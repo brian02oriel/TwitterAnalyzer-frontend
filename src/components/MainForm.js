@@ -16,7 +16,7 @@ const MainForm = ({getData, isLoading}) => {
         }).then(function(res){
             let data = res.data
             console.log(data.words_freq)
-            getData(data)
+            getData(data, state.keywords)
             isLoading(false)
             setState(prevState => ({...prevState, keywords: ''}))
         }).catch(function(error){

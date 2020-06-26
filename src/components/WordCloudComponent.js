@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import ReactWordcloud from 'react-wordcloud'
 
 const WordCloudComponent = ({data}) => {
@@ -16,6 +16,9 @@ const WordCloudComponent = ({data}) => {
                         return '#aab8c2'
                     }
                 }
+            }}
+            options = {{
+                fontSizes: [16, 80]
             }}
         />
     );

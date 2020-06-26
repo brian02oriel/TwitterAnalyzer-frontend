@@ -8,11 +8,12 @@ const Main = (props) => {
     const { containerStyle } = mainStyles
     const [state, setState] = useState({
         data:{},
+        keywords: '',
         loading: false
     })
 
-    const getData = (data) =>{
-        setState(prevState =>({...prevState, data}))
+    const getData = (data, keywords) =>{
+        setState({data, keywords})
     }
 
     const isLoading = (loading) =>{
@@ -20,10 +21,11 @@ const Main = (props) => {
     }
 
     console.log('main state: ', state.data)
+    const { loading, data, keywords } = state
     return (
        <Container style={containerStyle}>
            <MainHeader getData={getData} isLoading={isLoading}/>
-           <MainContent loading={state.loading}  data={state.data}/>
+           <MainContent loading={loading}  data={data} keywords={keywords}/>
            <MainFooter/>
        </Container>
     );
