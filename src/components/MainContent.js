@@ -1,7 +1,9 @@
 import React, { Fragment, useRef, useEffect } from 'react';
 import { Content, Row, Col, Loader } from 'rsuite';
-import WordCloud from './WordCloudComponent';
-import WordBarChar from './WordBarChar';
+import WordCloud from './ChartComponents/WordCloudComponent';
+import WordBarChart from './ChartComponents/WordBarChart';
+import FeelsPolarChart from './ChartComponents/FeelsPolarChart';
+import FeelsPieChart from './ChartComponents/FeelsPieChart';
 //import Banner1 from '../assets/img/pic1.jpg';
 import Banner2 from '../assets/img/pic2.jpg';
 
@@ -9,7 +11,7 @@ import Banner2 from '../assets/img/pic2.jpg';
 const MainContent = ({loading, data, keywords}) => {
     const { imageContainerStyle, textContainerStyle,
             textStyle, textContainerStyle2, textStyle2, quoteContainerStyle, 
-            quoteContainerContent, loadingStyle } = contentStyles
+            quoteContainerContent, loadingStyle, feelChartsStyle } = contentStyles
     const scrollRef = useRef(null)
 
     useEffect(() =>{
@@ -108,8 +110,20 @@ const MainContent = ({loading, data, keywords}) => {
                         
                     </Col>
                     <Col md={12} sm={24} style={{ paddingBottom:'3%'}}>
-                        {<WordBarChar data={data.words_freq}/>}
+                        {<WordBarChart data={data.words_freq}/>}
                     </Col>
+                </Row>
+                <Row>
+                    <Col md={8} sm={24} style={feelChartsStyle}>
+                        <FeelsPolarChart data={data.perception}/>
+                    </Col>
+                    <Col md={8} sm={24} style={feelChartsStyle}>
+                        <FeelsPieChart data={data.perception}/>
+                    </Col>
+                    <Col md={8} sm={24} style={feelChartsStyle}>
+                    
+                    </Col>
+                    
                 </Row>
                 <Row>
                     <Col sm={24} style={quoteContainerStyle}>
@@ -187,7 +201,11 @@ const contentStyles = {
         alignItems: 'center',
         justifyContent: 'center'
 
+    },
+    feelChartsStyle:{
+        border: '1px solid black'
     }
+
 
 }
 
