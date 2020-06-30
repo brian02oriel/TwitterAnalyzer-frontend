@@ -4,6 +4,7 @@ import WordCloud from './ChartComponents/WordCloudComponent';
 import WordBarChart from './ChartComponents/WordBarChart';
 import FeelsPolarChart from './ChartComponents/FeelsPolarChart';
 import FeelsPieChart from './ChartComponents/FeelsPieChart';
+import GeneralPerception from './ChartComponents/GeneralPerception';
 //import Banner1 from '../assets/img/pic1.jpg';
 import Banner2 from '../assets/img/pic2.jpg';
 
@@ -121,7 +122,7 @@ const MainContent = ({loading, data, keywords}) => {
                         <FeelsPieChart data={data.perception}/>
                     </Col>
                     <Col md={8} sm={24} style={feelChartsStyle}>
-                    
+                        <GeneralPerception data={data.perception.general_perception}/>
                     </Col>
                     
                 </Row>
