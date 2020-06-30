@@ -12,7 +12,7 @@ import Banner2 from '../assets/img/pic2.jpg';
 const MainContent = ({loading, data, keywords}) => {
     const { imageContainerStyle, textContainerStyle,
             textStyle, textContainerStyle2, textStyle2, quoteContainerStyle, 
-            quoteContainerContent, loadingStyle, feelChartsStyle } = contentStyles
+            quoteContainerContent, loadingStyle} = contentStyles
     const scrollRef = useRef(null)
 
     useEffect(() =>{
@@ -115,13 +115,13 @@ const MainContent = ({loading, data, keywords}) => {
                     </Col>
                 </Row>
                 <Row>
-                    <Col md={8} sm={24} style={feelChartsStyle}>
+                    <Col md={8} sm={24} >
                         <FeelsPolarChart data={data.perception}/>
                     </Col>
-                    <Col md={8} sm={24} style={feelChartsStyle}>
+                    <Col md={8} sm={24} >
                         <FeelsPieChart data={data.perception}/>
                     </Col>
-                    <Col md={8} sm={24} style={feelChartsStyle}>
+                    <Col md={8} sm={24} >
                         <GeneralPerception data={data.perception.general_perception}/>
                     </Col>
                     
@@ -202,11 +202,7 @@ const contentStyles = {
         alignItems: 'center',
         justifyContent: 'center'
 
-    },
-    feelChartsStyle:{
-        border: '1px solid black'
     }
-
 
 }
 

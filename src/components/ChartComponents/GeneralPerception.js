@@ -1,12 +1,13 @@
 import React from 'react';
-import { Icon, Row, Col,  } from 'rsuite';
-
+import { Row, Col,  } from 'rsuite';
+import PositivePerception from './P5Components/PositivePerception';
+import NegativePerception from './P5Components/NegativePerception';
+import NeutralPerception from './P5Components/NeutralPerception';
 
 const GeneralPerception = ({data}) => {
-    const { iconStyle } = contentStyles
-    const perceptions = [{icon:  <Icon icon='smile-o'  size='5x' style={iconStyle}/>, text: 'positiva'},
-    {icon:  <Icon icon='meh-o' size='5x' style={iconStyle}/>, text: 'neutral'},
-    {icon:  <Icon icon='frown-o' size='5x' style={iconStyle}/>, text: 'negativa'}]
+    const perceptions = [{icon:  <PositivePerception />, text: 'positiva'},
+    {icon:  <NeutralPerception />, text: 'neutral'},
+    {icon:  <NegativePerception />, text: 'negativa'}]
 
     let currentPreception = {}
     if(data > 0){
@@ -18,7 +19,7 @@ const GeneralPerception = ({data}) => {
     }
 
     return (
-        <div style={{ width: '100%', height: 400 }}>
+        <div style={{ width: '100%', height: 400, textAlign: 'center' }}>
             <Row>
                 <Col md="24">
                     {currentPreception.icon}
@@ -36,9 +37,4 @@ const GeneralPerception = ({data}) => {
     );
 };
 
-const contentStyles = {
-    iconStyle:{
-        color: '#1da1f2'
-    }
-}
 export default GeneralPerception;
