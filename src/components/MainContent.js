@@ -97,11 +97,11 @@ const MainContent = ({loading, data, keywords, topScrollRef}) => {
                 <Fragment>
                     
                       <IconButton 
-                        style={{position: 'fixed', boxShadow: '2px 2px 3px #002e63', 
+                        style={{position: 'fixed', boxShadow: '2px 2px 3px #1da1f2', 
                         bottom:40,
                         right:40,
                         zIndex: 1,
-                        backgroundColor: '#002e63',
+                        backgroundColor: '#1da1f2',
                         color: '#e1e8ed'
                         //visibility: floatingVisible
                     }}
