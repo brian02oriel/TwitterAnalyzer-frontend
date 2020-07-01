@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useRef, useEffect } from 'react';
+import React, { Fragment,  useRef, useEffect } from 'react';
 import { Content, Row, Col, Loader, Icon, Divider, IconButton } from 'rsuite';
 import WordCloud from './ChartComponents/WordCloudComponent';
 import WordBarChart from './ChartComponents/WordBarChart';
