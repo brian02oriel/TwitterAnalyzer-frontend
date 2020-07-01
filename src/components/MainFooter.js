@@ -31,7 +31,7 @@ const MainFooter = () => {
 
 const footerStyles = {
     footerContainerStyle:{
-        width:'100vw',
+        //width:'100vw',
         color:'#FFFFFF',
         background: '#002E63'
     }, 

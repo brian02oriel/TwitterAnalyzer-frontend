@@ -33,13 +33,13 @@ const Main = (props) => {
 
 const mainStyles = {
     containerStyle: {
-        width: 'auto',
-        height: 'auto',
-        border: '1px solid black',
-        display: 'flex',
+        /*width: 'auto',
+        height: 'auto',*/
+        //border: '1px solid black',
+        /*display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        justifyContent: 'flex-start'
+        justifyContent: 'flex-start'*/
     }
 }
 
