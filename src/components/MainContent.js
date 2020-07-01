@@ -1,4 +1,4 @@
-import React, { Fragment,  useRef, useEffect } from 'react';
+import React, { Fragment, useState, useRef, useEffect } from 'react';
 import { Content, Row, Col, Loader, Icon, Divider, IconButton } from 'rsuite';
 import WordCloud from './ChartComponents/WordCloudComponent';
 import WordBarChart from './ChartComponents/WordBarChart';
@@ -14,30 +14,35 @@ const MainContent = ({loading, data, keywords, topScrollRef}) => {
             textStyle, textContainerStyle2, textStyle2, specialTextContainer, 
             specialTextContent, loadingStyle} = contentStyles
     const scrollRef = useRef(null)
-    //const [ state, setState ] = useState({ floatingVisible: 'hidden' })
+    const [ state, setState ] = useState({ scrollPosition: window.pageYOffset })
     useEffect(() =>{
-        console.log('effect executed: ', loading)
         if(loading){
             scrollRef.current.scrollIntoView({ behavior: "smooth" })
         }
-
-   
-
+        
     })
 
     const onFloatingClick = () =>{
-        console.log(topScrollRef)
         if(topScrollRef.current != null){
             topScrollRef.current.scrollIntoView({ behavior: "smooth" })
-        }
-            
+            setState({ scrollPosition: window.pageYOffset})
+        }      
     }
-        
-    
 
+    console.log('state: ', state)
+    console.log('inner height: ', window.innerHeight)
     return (
         <Content>
             <div ref={scrollRef}/>
+            <IconButton 
+                        style={{position: 'fixed', 
+                        bottom:40,
+                        right:40,
+                        zIndex: 1,
+                        backgroundColor: '#1da1f2',
+                        color: '#e1e8ed',
+                    }}
+            icon={<Icon icon='angle-up' size='5x' style={{margin:'1%'}}/>} circle size='lg' onClick={onFloatingClick} />
             {/* !loading &&
                 <Fragment>
                 <Row>
@@ -95,21 +100,6 @@ const MainContent = ({loading, data, keywords, topScrollRef}) => {
             {   !loading &&
                 Object.keys(data).length !== 0 &&
                 <Fragment>
-                    
-                      <IconButton 
-                        style={{position: 'fixed', boxShadow: '2px 2px 3px #1da1f2', 
-                        bottom:40,
-                        right:40,
-                        zIndex: 1,
-                        backgroundColor: '#1da1f2',
-                        color: '#e1e8ed'
-                        //visibility: floatingVisible
-                    }}
-                      icon={<Icon icon='angle-up' size='5x' style={{margin:'1%'}}/>} circle size='lg' onClick={onFloatingClick} />
-                    
-
-                
-                
                 <Row>
                     <Col sm={24} style={{margin: '1%'}}>
                         <h3> Palabra clave: <i> {keywords} </i></h3>

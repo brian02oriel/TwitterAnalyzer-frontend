@@ -22,7 +22,6 @@ const Main = (props) => {
         setState(prevState =>({...prevState, loading}))
     }
 
-    console.log('main state: ', state.data)
     const { loading, data, keywords } = state
     return (
        <Container style={containerStyle}>
