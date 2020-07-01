@@ -1,5 +1,5 @@
-import React, { Fragment, useRef, useEffect } from 'react';
-import { Content, Row, Col, Loader, Icon, Divider, IconButton, Popover, Whisper } from 'rsuite';
+import React, { Fragment, useState, useRef, useEffect } from 'react';
+import { Content, Row, Col, Loader, Icon, Divider, IconButton } from 'rsuite';
 import WordCloud from './ChartComponents/WordCloudComponent';
 import WordBarChart from './ChartComponents/WordBarChart';
 import FeelsPolarChart from './ChartComponents/FeelsPolarChart';
@@ -9,18 +9,31 @@ import GeneralPerception from './ChartComponents/GeneralPerception';
 import Banner2 from '../assets/img/pic2.jpg';
 
 
-const MainContent = ({loading, data, keywords}) => {
+const MainContent = ({loading, data, keywords, topScrollRef}) => {
     const { imageContainerStyle, textContainerStyle,
             textStyle, textContainerStyle2, textStyle2, specialTextContainer, 
             specialTextContent, loadingStyle} = contentStyles
     const scrollRef = useRef(null)
-
+    //const [ state, setState ] = useState({ floatingVisible: 'hidden' })
     useEffect(() =>{
         console.log('effect executed: ', loading)
         if(loading){
             scrollRef.current.scrollIntoView({ behavior: "smooth" })
         }
+
+   
+
     })
+
+    const onFloatingClick = () =>{
+        console.log(topScrollRef)
+        if(topScrollRef.current != null){
+            topScrollRef.current.scrollIntoView({ behavior: "smooth" })
+        }
+            
+    }
+        
+    
 
     return (
         <Content>
@@ -82,11 +95,19 @@ const MainContent = ({loading, data, keywords}) => {
             {   !loading &&
                 Object.keys(data).length !== 0 &&
                 <Fragment>
-                    <IconButton style={{position: 'fixed', boxShadow: '2px 2px 3px #999', width:60,
-	height:60,
-	bottom:40,
-	right:40,}}
-                    icon={<Icon icon='angle-up'/>} circle size='lg'/>
+                    
+                      <IconButton 
+                        style={{position: 'fixed', boxShadow: '2px 2px 3px #002e63', 
+                        bottom:40,
+                        right:40,
+                        zIndex: 1,
+                        backgroundColor: '#002e63',
+                        color: '#e1e8ed'
+                        //visibility: floatingVisible
+                    }}
+                      icon={<Icon icon='angle-up' size='5x' style={{margin:'1%'}}/>} circle size='lg' onClick={onFloatingClick} />
+                    
+
                 
                 
                 <Row>
