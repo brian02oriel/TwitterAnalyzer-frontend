@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
 import { Container } from 'rsuite';
 import MainHeader from './MainHeader';
 import MainContent from './MainContent';
@@ -6,28 +6,14 @@ import MainFooter from './MainFooter';
 
 const Main = (props) => {
     const { containerStyle } = mainStyles
-    const [state, setState] = useState({
-        data:{},
-        keywords: '',
-        loading: false
-    })
 
     const topScrollRef = useRef(null)
 
-    const getData = (data, keywords) =>{
-        setState({data, keywords})
-    }
-
-    const isLoading = (loading) =>{
-        setState(prevState =>({...prevState, loading}))
-    }
-
-    const { loading, data, keywords } = state
     return (
        <Container style={containerStyle}>
             <div ref={topScrollRef} />
-           <MainHeader getData={getData} isLoading={isLoading}/>
-           <MainContent loading={loading}  data={data} keywords={keywords} topScrollRef={topScrollRef}/>
+           <MainHeader/>
+           <MainContent topScrollRef={topScrollRef}/>
            <MainFooter/>
        </Container>
     );

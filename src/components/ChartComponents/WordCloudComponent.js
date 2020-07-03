@@ -8,9 +8,9 @@ const WordCloudComponent = ({data}) => {
             words={data}
             callbacks ={{
                 getWordColor: ({value}) =>{
-                    if(value > 30){
+                    if(value > 50){
                         return '#1da1f2'
-                    } else if(value >= 10 && value <= 30){
+                    } else if(value >= 20 && value <= 50){
                         return '#002e63'
                     } else {
                         return '#aab8c2'

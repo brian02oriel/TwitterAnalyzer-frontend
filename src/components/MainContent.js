@@ -1,4 +1,5 @@
-import React, { Fragment, useState, useRef, useEffect } from 'react';
+import React, { Fragment, useContext, useRef, useEffect } from 'react';
+import { stateContext } from '../reducer/reducer'
 import { Content, Row, Col, Loader, Icon, Divider, IconButton } from 'rsuite';
 import WordCloud from './ChartComponents/WordCloudComponent';
 import WordBarChart from './ChartComponents/WordBarChart';
@@ -9,12 +10,16 @@ import GeneralPerception from './ChartComponents/GeneralPerception';
 import Banner2 from '../assets/img/pic2.jpg';
 
 
-const MainContent = ({loading, data, keywords, topScrollRef}) => {
+const MainContent = ({topScrollRef}) => {
     const { imageContainerStyle, textContainerStyle,
             textStyle, textContainerStyle2, textStyle2, specialTextContainer, 
             specialTextContent, loadingStyle} = contentStyles
     const scrollRef = useRef(null)
-    const [ state, setState ] = useState({ scrollPosition: window.pageYOffset })
+    
+    const state = useContext(stateContext)
+
+    const { loading, keywords, data } = state
+
     useEffect(() =>{
         if(loading){
             scrollRef.current.scrollIntoView({ behavior: "smooth" })
@@ -25,7 +30,7 @@ const MainContent = ({loading, data, keywords, topScrollRef}) => {
     const onFloatingClick = () =>{
         if(topScrollRef.current != null){
             topScrollRef.current.scrollIntoView({ behavior: "smooth" })
-            setState({ scrollPosition: window.pageYOffset})
+            
         }      
     }
 
@@ -151,7 +156,7 @@ const MainContent = ({loading, data, keywords, topScrollRef}) => {
                     </Col>
                     
                 </Row>
-                <Row style={{textAlign: 'center', marginTop: '2%'}}>
+                <Row style={{textAlign: 'center', marginTop: '3%'}}>
                     <Col md={24}>
                         <p> Estas gráficas representan las <strong style={{color: '#1da1f2'}}> emociones </strong> percibidas en cada tweet 
                             con la intención de entender qué representa la palabra clave introducida

@@ -1,24 +1,25 @@
-import React, { useState }from 'react';
+import React, { useContext }from 'react';
+import { stateContext, dispatchContext, actions } from '../reducer/reducer'
 import { Input, InputGroup, Icon, IconButton, Row, Col } from 'rsuite';
 import axios from 'axios'
 
-const MainForm = ({getData, isLoading}) => {
+const MainForm = () => {
     const { inputContainerStyle, inputStyle, inputGroupButton, iconButtonStyle } = mainFormStyles
-    const [state, setState] = useState({
+    /*const [state, setState] = useState({
         keywords: "",
-    })
+    })*/
+    const state = useContext(stateContext)
+    const dispatch = useContext(dispatchContext)
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        isLoading(true)
+        dispatch({ type: actions.isLoading, payload: ''}) // Equivalent to dispatch(createAction(actions.isLoading, '')
         axios.post('http://127.0.0.1:5000/api/twitter', {
             keywords: state.keywords
         }).then(function(res){
             let data = res.data
-            console.log(data.words_freq)
-            getData(data, state.keywords)
-            isLoading(false)
-            setState(prevState => ({...prevState, keywords: ''}))
+            dispatch({ type: actions.isLoading, payload: ''})
+            dispatch({ type: actions.findTweets, payload: data})
         }).catch(function(error){
             console.log(error)
         })
@@ -26,12 +27,9 @@ const MainForm = ({getData, isLoading}) => {
 
     const handleInputChange = (data, e) =>{
         // data is equal to e.target.value
-        const { name, value } = e.target
-        setState(prevState => ({...prevState, [name]: value}))
+        const { value } = e.target
+        dispatch({ type: actions.searchTweets, payload: value})
     }
-
-
-    //console.log("form state: ", state)
 
     return (
         <Row style={inputContainerStyle}>
