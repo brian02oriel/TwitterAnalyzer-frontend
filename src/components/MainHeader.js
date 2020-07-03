@@ -8,10 +8,10 @@ const MainHeader = () => {
     return (
         <FlexboxGrid justify="center">
             <Header style={containerStyle}>
-                <h1> Header </h1>
-                <h2> SubHeader </h2>
+                <h1> Tweet Analyzer </h1>
+                <h2> alfa 1.0.0 </h2>
                 <br/>
-                <p> Description </p>
+                <p> Lo que opina la gente a una búsqueda de distancia </p>
                 <MainForm />        
             </Header>
         </FlexboxGrid>

@@ -156,7 +156,7 @@ const MainContent = ({topScrollRef}) => {
                     </Col>
                     
                 </Row>
-                <Row style={{textAlign: 'center', marginTop: '3%'}}>
+                <Row style={{textAlign: 'center', marginTop: '4%'}}>
                     <Col md={24}>
                         <p> Estas gráficas representan las <strong style={{color: '#1da1f2'}}> emociones </strong> percibidas en cada tweet 
                             con la intención de entender qué representa la palabra clave introducida
@@ -173,7 +173,7 @@ const MainContent = ({topScrollRef}) => {
                                     <Icon size='5x' icon='user-circle' />   
                                 </div>
                                 <div style={{padding: '3%'}}>
-                                    <h4> {data.random_tweet.user} </h4>
+                                    <h4> @{data.random_tweet.user} </h4>
                                     <p>{data.random_tweet.tweet}</p>
                                 </div>
                             
