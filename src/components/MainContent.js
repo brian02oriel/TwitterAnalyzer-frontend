@@ -156,7 +156,7 @@ const MainContent = ({topScrollRef}) => {
                     </Col>
                     
                 </Row>
-                <Row style={{textAlign: 'center', marginTop: '4%'}}>
+                <Row style={{textAlign: 'center', marginTop: '5%', marginBottom: '5%'}}>
                     <Col md={24}>
                         <p> Estas gráficas representan las <strong style={{color: '#1da1f2'}}> emociones </strong> percibidas en cada tweet 
                             con la intención de entender qué representa la palabra clave introducida
