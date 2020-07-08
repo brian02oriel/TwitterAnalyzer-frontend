@@ -13,8 +13,9 @@ const MainForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        const API_URL = process.env.REACT_APP_FLASK_API
         dispatch({ type: actions.isLoading, payload: ''}) // Equivalent to dispatch(createAction(actions.isLoading, '')
-        axios.post('http://127.0.0.1:5000/api/twitter', {
+        axios.post(API_URL, {
             keywords: state.keywords
         }).then(function(res){
             let data = res.data
