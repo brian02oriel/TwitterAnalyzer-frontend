@@ -17,6 +17,10 @@ const MainForm = () => {
         dispatch({ type: actions.isLoading, payload: ''}) // Equivalent to dispatch(createAction(actions.isLoading, '')
         axios.post(API_URL, {
             keywords: state.keywords
+        },{
+            headers:{
+                'Content-Type': 'application/json'
+            }
         }).then(function(res){
             let data = res.data
             dispatch({ type: actions.isLoading, payload: ''})
