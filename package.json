@@ -18,15 +18,10 @@
     "rsuite": "^4.7.5"
   },
   "scripts": {
-    "fix-memory-limit": "cross-env LIMIT=1024 increase-memory-limit",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
-  },
-  "devDependencies": {
-    "cross-env": "^5.2.1",
-    "increase-memory-limit": "^1.0.3"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -42,5 +37,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {}
 }
