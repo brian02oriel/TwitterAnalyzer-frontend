@@ -15,6 +15,7 @@ const MainForm = () => {
         e.preventDefault()
         const API_URL = process.env.REACT_APP_FLASK_API
         dispatch({ type: actions.isLoading, payload: ''}) // Equivalent to dispatch(createAction(actions.isLoading, '')
+        console.log(process.env)
         axios.post(API_URL, {
             keywords: state.keywords
         },{

@@ -6,6 +6,10 @@ WORKDIR /usr/src/app
 COPY . /usr/src/app
 COPY package.json /usr/src/app
 
+# adding env variable
+ARG REACT_APP_FLASK_API
+ENV REACT_APP_FLASK_API "http://172.22.0.2:5000/api/twitter"
+
 # prepare the container for building react
 RUN npm install --silent
 RUN npm run build
