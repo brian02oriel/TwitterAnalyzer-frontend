@@ -1,3 +1,4 @@
+
 FROM node:latest as build
 RUN mkdir -p /usr/src/app
 
@@ -12,6 +13,8 @@ ENV REACT_APP_FLASK_API "http://172.22.0.2:5000/api/twitter"
 
 # prepare the container for building react
 RUN npm install --silent
+RUN npm install -g increase-memory-limit
+RUN increase-memory-limit
 RUN npm run build
 
 # preprare nginx
