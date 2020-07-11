@@ -12,6 +12,7 @@ ARG REACT_APP_FLASK_API
 ENV REACT_APP_FLASK_API "http://172.22.0.2:5000/api/twitter"
 
 # prepare the container for building react
+RUN NODE_OPTIONS=--max_old_space_size=8000
 RUN npm install
 RUN npm run build
 
