@@ -13,7 +13,9 @@ ENV REACT_APP_FLASK_API "http://172.22.0.2:5000/api/twitter"
 
 # prepare the container for building react
 RUN npm install
-RUN node --expose-gc --max-old-space-size=1024 node_modules/react-scripts/scripts/build.js
+#ARG NODE_OPTIONS=--max_old_space_size=4096
+RUN npm run build 
+#node --expose-gc --max-old-space-size=1024 node_modules/react-scripts/scripts/build.js
 
 # preprare nginx
 FROM nginx:alpine
