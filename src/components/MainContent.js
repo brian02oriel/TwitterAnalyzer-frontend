@@ -105,6 +105,7 @@ const MainContent = ({topScrollRef}) => {
             {   !loading &&
                 Object.keys(data).length !== 0 &&
                 <Fragment>
+                <div style={{ padding: '2%'}}>
                 <Row>
                     <Col sm={24} style={{margin: '1%'}}>
                         <h3> Palabra clave: <i> {keywords} </i></h3>
@@ -180,6 +181,7 @@ const MainContent = ({topScrollRef}) => {
                         </div>
                     </Col>
                 </Row>
+                </div>
                 <Row>
                     <Col md={12} sm={24} style={textContainerStyle2}>
                         <div style={textStyle2}>
