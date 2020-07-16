@@ -71,8 +71,8 @@ const FeelsPieChart = ({data}) => {
                     activeIndex={state.activeIndex}
                     activeShape={renderActiveShape}
                     onMouseEnter={onPieEnter}
-                    innerRadius='27%'
-                    outerRadius='37%'
+                    innerRadius='17%'
+                    outerRadius='27%'
                     data={dataset}
                     fill="#e1e8ed"
                     paddingAngle={5}
