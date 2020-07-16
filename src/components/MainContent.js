@@ -6,6 +6,8 @@ import WordBarChart from './ChartComponents/WordBarChart';
 import FeelsPolarChart from './ChartComponents/FeelsPolarChart';
 import FeelsPieChart from './ChartComponents/FeelsPieChart';
 import GeneralPerception from './ChartComponents/GeneralPerception';
+import P5Wrapper from 'react-p5-wrapper'
+import P5Background from './P5Background';
 //import Banner1 from '../assets/img/pic1.jpg';
 import Banner2 from '../assets/img/pic2.jpg';
 
@@ -48,6 +50,8 @@ const MainContent = ({topScrollRef}) => {
                         color: '#e1e8ed',
                     }}
             icon={<Icon icon='angle-up' size='5x' style={{margin:'1%'}}/>} circle size='lg' onClick={onFloatingClick} />
+            <P5Wrapper sketch={P5Background}/>
+            
             {/* !loading &&
                 <Fragment>
                 <Row>
