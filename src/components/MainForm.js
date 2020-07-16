@@ -1,5 +1,5 @@
 import React, { useState, useContext }from 'react';
-import { stateContext, dispatchContext, actions } from '../reducer/reducer'
+import { /*stateContext,*/ dispatchContext, actions } from '../reducer/reducer'
 import { Input, InputGroup, Icon, IconButton, Row, Col } from 'rsuite';
 import axios from 'axios'
 
@@ -9,7 +9,7 @@ const MainForm = () => {
         keywords: "",
         disableInput: false
     })
-    const state = useContext(stateContext)
+    //const state = useContext(stateContext)
     const dispatch = useContext(dispatchContext)
 
     const handleSubmit = (e) => {

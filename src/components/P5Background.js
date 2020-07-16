@@ -1,5 +1,3 @@
-import Sketch from 'react-p5';
-
 const P5Background = (p5) => {
     function randomizer(min, max){
         return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -19,10 +17,10 @@ const P5Background = (p5) => {
 
         fall(){
             this.y = this.y + this.yspeed
-            const grav = scaleMapping(this.z, 0, 20, 0, 0.2)
+            const grav = scaleMapping(this.z, 0, 20, 0, 0.005)
             this.yspeed = this.yspeed + grav
-            let yMin = -500
-            let yMax = -50
+            let yMin = -1000
+            let yMax = -500
             if(this.y > p5.height){
                 this.y = randomizer(yMin, yMax)
                 this.yspeed = scaleMapping(this.z, 0, 20, 4, 10)
@@ -32,18 +30,20 @@ const P5Background = (p5) => {
         show(){
             const thick = scaleMapping(this.z, 0, 20, 1, 3)
             p5.strokeWeight(thick)
-            p5.stroke(138, 43, 226)
+            p5.stroke(160, 199, 227)
             p5.line(this.x, this.y, this.x, this.y+this.len)
         }
     }
 
-    let drops = new Array(200)
+    let drops = new Array(100)
     p5.setup = function(){
-        p5.createCanvas(640, 360, p5.WEBGL)
-        let xMin = 1 - p5.width
-        let xMax = p5.width - 1
-        let yMin = -500
-        let yMax = -50
+        let width = window.innerWidth
+        let height = window.innerHeight
+        p5.createCanvas(width, height, p5.WEBGL)
+        let xMin = 1 - width
+        let xMax = width - 1
+        let yMin = -1000
+        let yMax = -500
         let zMin = 0
         let zMax = 20
         for(let i= 0;  i < drops.length; i++){
@@ -52,7 +52,9 @@ const P5Background = (p5) => {
     }
 
     p5.draw = function(){
-        p5.background(230, 230, 250)
+        p5.background(29, 161, 242) 
+        // 0, 46, 99
+        // 29, 161, 242
         for(let i= 0;  i < drops.length; i++){
             drops[i].fall()
             drops[i].show()
