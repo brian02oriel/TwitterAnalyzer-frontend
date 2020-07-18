@@ -2,7 +2,7 @@
 import React from 'react';
 import { Header, FlexboxGrid } from 'rsuite';
 import P5Wrapper from 'react-p5-wrapper'
-import P5Background from './P5Background';
+import P5Background from './Complements/P5Background';
 import MainForm from './MainForm';
 
 const MainHeader = () => {

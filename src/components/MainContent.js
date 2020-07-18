@@ -6,6 +6,7 @@ import WordBarChart from './ChartComponents/WordBarChart';
 import FeelsPolarChart from './ChartComponents/FeelsPolarChart';
 import FeelsPieChart from './ChartComponents/FeelsPieChart';
 import GeneralPerception from './ChartComponents/GeneralPerception';
+import PhrasesLoader from './Complements/PhrasesLoader'
 //import Banner1 from '../assets/img/pic1.jpg';
 import Banner2 from '../assets/img/pic2.jpg';
 
@@ -48,7 +49,6 @@ const MainContent = ({topScrollRef}) => {
                         color: '#e1e8ed',
                     }}
             icon={<Icon icon='angle-up' size='5x' style={{margin:'1%'}}/>} circle size='lg' onClick={onFloatingClick} />
-            
             
             {/* !loading &&
                 <Fragment>
@@ -98,7 +98,9 @@ const MainContent = ({topScrollRef}) => {
                 loading &&
                 <Row>
                     <Col sm={24} style={loadingStyle}>
-                        <Loader size="lg" vertical content="Cargando..." />
+                        <Loader size="lg" vertical content="Buscando tweets..." />
+                        <br/>
+                        <PhrasesLoader />
                     </Col>
                 </Row>
 
