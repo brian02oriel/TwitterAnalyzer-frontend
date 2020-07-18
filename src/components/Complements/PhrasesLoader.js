@@ -6,6 +6,7 @@ const { Fade } = Animation;
 const PhrasesLoader = () => {
     const [state, setState] = useState({
         quote: '',
+        author: '',
         show: false
     })
 
@@ -14,7 +15,8 @@ const PhrasesLoader = () => {
             setTimeout(()=>{
                 resolve(
                     setState({
-                        quote: quotes[index],
+                        quote: quotes[index].phrase,
+                        author: quotes[index].author,
                         show
                     })
                 )
@@ -28,28 +30,22 @@ const PhrasesLoader = () => {
         const manageAnimation = async () =>{
             for(let i=0; i<10; i++){
                 let index = Math.floor(Math.random() * (quotes.length - 1))
-                console.log('getting in')
                 await timeout(2000, index, true)
-                console.log('getting out')
                 await timeout(10000, index, false)
-                console.log('loop')
             }
     
         }
         manageAnimation()
     }, [])
 
-  
-    //sleep()
-    console.log('render', {state})
     return (
         <div>
              <Fade in={state.show} transitionAppear={true} timeout={1000}>
                  <div style={{textAlign: 'center'}}>
                         <blockquote>
-                            <p>{state.quote.phrase}</p>
+                            <p>{state.quote}</p>
                             <br/>
-                            <footer style={{fontSize: '1.1vmax'}}>—{state.quote.author}</footer>
+                            <footer style={{fontSize: '1.1vmax'}}>—{state.author}</footer>
                         </blockquote>
                  </div>
             </Fade>

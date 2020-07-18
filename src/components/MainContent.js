@@ -35,8 +35,8 @@ const MainContent = ({topScrollRef}) => {
         }      
     }
 
-    console.log('state: ', state)
-    console.log('inner height: ', window.innerHeight)
+    //console.log('state: ', state)
+    //console.log('inner height: ', window.innerHeight)
     return (
         <Content>
             <div ref={scrollRef}/>
@@ -50,50 +50,6 @@ const MainContent = ({topScrollRef}) => {
                     }}
             icon={<Icon icon='angle-up' size='5x' style={{margin:'1%'}}/>} circle size='lg' onClick={onFloatingClick} />
             
-            {/* !loading &&
-                <Fragment>
-                <Row>
-                <Col md={12} sm={24} style={imageContainerStyle}>
-                    <img src={Banner1} alt="People together" width="100%" height="auto"/>
-                </Col>
-                <Col md={12} sm={24} style={textContainerStyle}>
-                    <div style={textStyle}>
-                        <p> 
-                            Twitter  es una de las redes sociales más usadas mundialmente, y más que usarla para chismes,
-                            es una herramienta potente que permite medir la percepción que tienen las personas hacia las marcas, 
-                            personajes de interés, deportes, entre otros. 
-                        </p>
-                    </div>
-                    
-                </Col>
-            </Row>
-            <Row>
-                <Col sm={24} style={specialTextContainer}>
-                    <div style={specialTextContent}>
-                        <blockquote cite="https://www.sethgodin.com/">
-                            <p>“Las conversaciones entre los miembros de tu nicho ocurren, te guste o no. El buen marketing alienta el tipo de conversación correcta.”</p>
-                            <br/>
-                            <footer style={{fontSize: '2.1vmax'}}>—Seth Godin</footer>
-                        </blockquote>
-                    </div>
-                </Col>
-            </Row>
-            <Row>
-                <Col md={12} sm={24} style={textContainerStyle2}>
-                    <div style={textStyle2}>
-                        <p> 
-                        Si te da curiosidad o sólo quieres perder el tiempo, 
-                        te invito a probar este analizador para que sorprendas con 
-                        toda la información que se puede encontrar si se sabe buscar bien.
-                        </p>
-                    </div>
-                </Col>
-                <Col md={12} sm={24} style={imageContainerStyle}>
-                    <img src={Banner2} alt="People liked" width="100%" height="auto"/>
-                </Col>
-            </Row>
-            </Fragment>
-            */}
             {
                 loading &&
                 <Row>
@@ -149,11 +105,9 @@ const MainContent = ({topScrollRef}) => {
                 <Row style={{height: '100%', width: '100%'}}>
                     <Col md={8} sm={24} style={{ textAlign: 'center'}}>
                         <FeelsPolarChart data={data.perception}/>
-                        <h4> Cantidad de emociones percibidas </h4>
                     </Col>
                     <Col md={8} sm={24} style={{ textAlign: 'center'}}>
                         <FeelsPieChart data={data.perception}/>
-                        <h4> Porcentaje de emociones percibidas </h4>
                     </Col>
                     <Col md={8} sm={24} style={{ textAlign: 'center'}}>
                         <GeneralPerception data={data.perception.general_perception}/>
@@ -208,31 +162,25 @@ const MainContent = ({topScrollRef}) => {
 
 const contentStyles = {
     imageContainerStyle:{
-        textAlign: 'left',
-        //border: '1px solid grey',
-
+        textAlign: 'left'
     },
     textContainerStyle:{
         paddingTop: '6%',
         paddingBottom:'6%',
-        //border: '1px solid #1da1f2',
         fontSize: '1em',
         textAlign: 'left',
     },
     textStyle:{
         padding:'3%',
-        //border: '1px solid blue',
     },
     textContainerStyle2:{
         paddingTop: '8.85%',
         paddingBottom:'9%',
-        //border: '1px solid grey',
         fontSize: '1em',
         textAlign: 'left',
     },
     textStyle2:{
         padding:'3%',
-        //border: '1px solid blue',
     },
     specialTextContainer:{
         padding: '3%',

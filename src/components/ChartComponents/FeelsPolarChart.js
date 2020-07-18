@@ -18,6 +18,7 @@ const WordPolarChar = ({data}) => {
                     <Radar name="Percepciones emocionales en tweets" dataKey="count" stroke="#1da1f2" fill="#1da1f2" fillOpacity={0.6} />
                 </RadarChart>
             </ResponsiveContainer>
+            <h4> Cantidad de emociones percibidas </h4>
         </div>
     );
 };

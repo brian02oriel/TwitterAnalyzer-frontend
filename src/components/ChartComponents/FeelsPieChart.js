@@ -85,6 +85,7 @@ const FeelsPieChart = ({data}) => {
                     </Pie>
                 </PieChart>
             </ResponsiveContainer>
+            <h4> Porcentaje de emociones percibidas </h4>
         </div>
     );
 };

@@ -31,8 +31,6 @@ const GeneralPerception = ({data}) => {
                 <h4>{currentPreception.text}</h4>
                 </Col>
             </Row>
-                
-            
         </div>
     );
 };

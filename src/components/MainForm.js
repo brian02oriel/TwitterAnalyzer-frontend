@@ -46,9 +46,9 @@ const MainForm = () => {
         <Col>
             <form onSubmit={handleSubmit}>
                 <InputGroup inside>
-                    <Input size="lg" style={inputStyle} name="keywords" value={localState.keywords} onChange={handleInputChange} disabled={localState.disableInput} placeholder='Escriba su búsqueda...'/>
+                    <Input size="lg" style={inputStyle} name="keywords" value={localState.keywords || ''} onChange={handleInputChange} disabled={localState.disableInput || false} placeholder='Escriba su búsqueda...'/>
                     <InputGroup.Button style={inputGroupButton}>
-                        <IconButton type="submit" icon ={<Icon icon="search" />} circle style={iconButtonStyle} disabled={localState.disableInput}/>
+                        <IconButton type="submit" icon ={<Icon icon="search" />} circle style={iconButtonStyle} disabled={localState.disableInput || false}/>
                     </InputGroup.Button>
                 </InputGroup>
             </form>
