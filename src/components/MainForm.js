@@ -31,33 +31,38 @@ const MainForm = () => {
         e.preventDefault()
         let regex = new RegExp('^([a-zA-Z-.0-9]){1,20}')
         console.log(regex.test(localState.keywords))
-        if(regex.test(localState.keywords)){
-            const API_URL = process.env.REACT_APP_FLASK_API
-            setState({disableInput: true})
-            dispatch({ type: actions.searchTweets, payload: localState.keywords})
-            dispatch({ type: actions.isLoading, payload: ''}) // Equivalent to dispatch(createAction(actions.isLoading, '')
-            axios.post(API_URL, {
-                keywords: localState.keywords
-            },{
-                headers:{
-                    'Content-Type': 'application/json'
-                }
-            }).then(function(res){
-                let data = res.data
-                setState({disableInput: false})
-                setState({keywords: ''})
-                dispatch({ type: actions.isLoading, payload: ''})
-                dispatch({ type: actions.findTweets, payload: data})
-            }).catch(function(error){
-                console.log(error)
-                dispatch({ type: actions.isLoading, payload: ''})
-                setState({disableInput: false})
-                NotificationHandler('error', 'Ha ocurrido un problema', 'Su búsqueda no ha podido ser completada, por favor intente más tarde')
-            })
+        if(localState.keywords !== ''){
+            if(regex.test(localState.keywords)){
+                const API_URL = process.env.REACT_APP_FLASK_API
+                setState({disableInput: true})
+                dispatch({ type: actions.searchTweets, payload: localState.keywords})
+                dispatch({ type: actions.isLoading, payload: ''}) // Equivalent to dispatch(createAction(actions.isLoading, '')
+                axios.post(API_URL, {
+                    keywords: localState.keywords
+                },{
+                    headers:{
+                        'Content-Type': 'application/json'
+                    }
+                }).then(function(res){
+                    let data = res.data
+                    setState({disableInput: false})
+                    setState({keywords: ''})
+                    dispatch({ type: actions.isLoading, payload: ''})
+                    dispatch({ type: actions.findTweets, payload: data})
+                }).catch(function(error){
+                    console.log(error)
+                    dispatch({ type: actions.isLoading, payload: ''})
+                    setState({disableInput: false})
+                    NotificationHandler('error', 'Ha ocurrido un problema', 'Su búsqueda no ha podido ser completada, por favor intente más tarde.')
+                })
+            } else {
+    
+                NotificationHandler('warning', 'Ha ocurrido un problema', 'La palabra clave que ha introducido usa caracteres inválidos, favor corrija su búsqueda.')
+            }
         } else {
-
-            NotificationHandler('warning', 'Ha ocurrido un problema', 'La palabra clave que ha introducido usa caracteres inválidos, favor corrija su búsqueda')
+            NotificationHandler('warning', 'Ha ocurrido un problema', 'No ha introducido ninguna palabra, favor introdúzcala e intente nuevamente.')
         }
+        
         
     }
 

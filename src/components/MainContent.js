@@ -110,8 +110,7 @@ const MainContent = ({topScrollRef}) => {
                         <FeelsPieChart data={data.perception}/>
                     </Col>
                     <Col md={8} sm={24} style={{ textAlign: 'center'}}>
-                        <GeneralPerception data={data.perception.general_perception}/>
-                        <h4> Percepción general </h4>
+                        <GeneralPerception data={data.perception}/>
                     </Col>
                     
                 </Row>

@@ -5,11 +5,14 @@ import {
 
   
 const WordPolarChar = ({data}) => {
-    let dataset = [{'perception': 'positiva', 'count': data.positive}, {'perception': 'negativa', 'count': data.negative}, {'perception': 'neutral', 'count': data.neutral}]
+    console.log(data)
+    let dataset = [{'perception': 'neutral', 'count': data.neutral}, 
+     {'perception': 'muy negativa', 'count': data.very_negative}, {'perception': 'negativa', 'count': data.negative}, 
+     {'perception': 'positiva', 'count': data.positive}, {'perception': 'muy positiva', 'count': data.very_positive}]
 
     return (
-        <div style={{ width: '100%', height: 400}}>
-            <ResponsiveContainer>
+        <div style={{ width: '90%', height: 450, textAlign: 'center'}}>
+            <ResponsiveContainer  width={450} height="90%">
                 <RadarChart data={dataset} margin={{top: 5, right: 5, bottom: 5, left: 5 }}>
                     <PolarGrid />
                     <PolarAngleAxis dataKey="perception" />

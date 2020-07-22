@@ -10,16 +10,16 @@ const GeneralPerception = ({data}) => {
     {icon:  <NegativePerception />, text: 'negativa'}]
 
     let currentPreception = {}
-    if(data > 0){
+    if((data.positive + data.very_positive) > (data.negative + data.very_negative)){
         currentPreception = perceptions[0]
-    } else if(data < 0){
+    } else if((data.positive + data.very_positive) < (data.negative + data.very_negative)){
         currentPreception = perceptions[2]
     } else {
         currentPreception = perceptions[1]
     }
 
     return (
-        <div style={{ width: '100%', height: 400, textAlign: 'center' }}>
+        <div style={{ width: '90%', height: 400, textAlign: 'center'}}>
             <Row>
                 <Col md={24}>
                     {currentPreception.icon}
@@ -31,6 +31,7 @@ const GeneralPerception = ({data}) => {
                 <h4>{currentPreception.text}</h4>
                 </Col>
             </Row>
+            <h4> Percepción general </h4>
         </div>
     );
 };

@@ -60,19 +60,19 @@ const FeelsPieChart = ({data}) => {
       };
 
     const COLORS = ['#002e63', '#1da1f2', '#aab8c2'];
-    let dataset = [{'perception': 'positiva', 'count': data.positive}, {'perception': 'negativa', 'count': data.negative}, {'perception': 'neutral', 'count': data.neutral}]
+    let dataset = [{'perception': 'positiva', 'count': data.positive + data.very_positive}, {'perception': 'negativa', 'count': data.negative + data.very_negative}, {'perception': 'neutral', 'count': data.neutral}]
 
 
     return (
-        <div style={{ width: '100%', height: 400 }}>
-            <ResponsiveContainer>
+        <div style={{ width: '90%', height: 400, textAlign: 'center'}}>
+            <ResponsiveContainer width={500} height="90%">
                 <PieChart>
                     <Pie
                     activeIndex={state.activeIndex}
                     activeShape={renderActiveShape}
                     onMouseEnter={onPieEnter}
-                    innerRadius='17%'
-                    outerRadius='27%'
+                    innerRadius='20%'
+                    outerRadius='30%'
                     data={dataset}
                     fill="#e1e8ed"
                     paddingAngle={5}
