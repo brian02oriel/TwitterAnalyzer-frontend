@@ -64,15 +64,15 @@ const FeelsPieChart = ({data}) => {
 
 
     return (
-        <div style={{ width: '90%', height: 400, textAlign: 'center'}}>
-            <ResponsiveContainer width={500} height="90%">
+        <div style={{ width: '100%', height: 400, textAlign: 'center'}}>
+            <ResponsiveContainer>
                 <PieChart>
                     <Pie
                     activeIndex={state.activeIndex}
                     activeShape={renderActiveShape}
                     onMouseEnter={onPieEnter}
-                    innerRadius='20%'
-                    outerRadius='30%'
+                    innerRadius='30%'
+                    outerRadius='50%'
                     data={dataset}
                     fill="#e1e8ed"
                     paddingAngle={5}

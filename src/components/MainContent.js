@@ -103,17 +103,19 @@ const MainContent = ({topScrollRef}) => {
                 
                 <Divider> <strong style={{color: '#1da1f2'}}> Percepción emocional </strong> </Divider>
                 <Row style={{height: '100%', width: '100%'}}>
-                    <Col md={8} sm={24} style={{ textAlign: 'center'}}>
+                    <Col md={12} sm={24} style={{ textAlign: 'center'}}>
                         <FeelsPolarChart data={data.perception}/>
                     </Col>
-                    <Col md={8} sm={24} style={{ textAlign: 'center'}}>
+                    <Col md={12} sm={24} style={{ textAlign: 'center'}}>
                         <FeelsPieChart data={data.perception}/>
                     </Col>
-                    <Col md={8} sm={24} style={{ textAlign: 'center'}}>
+                </Row>
+                <Row style={{height: '100%', width: '100%'}}>
+                    <Col md={12} mdOffset={6} sm={24} style={{ textAlign: 'center'}}>
                         <GeneralPerception data={data.perception}/>
                     </Col>
-                    
                 </Row>
+
                 <Row style={{textAlign: 'center', marginTop: '5%', marginBottom: '5%'}}>
                     <Col md={24}>
                         <p> Estas gráficas representan las <strong style={{color: '#1da1f2'}}> emociones </strong> percibidas en cada tweet 
