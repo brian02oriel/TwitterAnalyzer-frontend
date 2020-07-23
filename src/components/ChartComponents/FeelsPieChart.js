@@ -61,18 +61,21 @@ const FeelsPieChart = ({data}) => {
 
     const COLORS = ['#002e63', '#1da1f2', '#aab8c2'];
     let dataset = [{'perception': 'positiva', 'count': data.positive + data.very_positive}, {'perception': 'negativa', 'count': data.negative + data.very_negative}, {'perception': 'neutral', 'count': data.neutral}]
-
-
+    const winHeight = window.screen.height
+    const winWidth = window.screen.width
+      console.log({winHeight, winWidth})
     return (
-        <div style={{ width: '100%', height: 400, textAlign: 'center'}}>
-            <ResponsiveContainer width='100%' height={400}>
-                <PieChart>
+        <div style={{ width: '100%', height: 400, textAlign: 'center',  display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center', padding: '10px'}}>
+            <ResponsiveContainer width={600} height="80%">
+                <PieChart margin={{top: 10, right: 10, bottom: 10, left: 10 }}>
                     <Pie
                     activeIndex={state.activeIndex}
                     activeShape={renderActiveShape}
                     onMouseEnter={onPieEnter}
-                    innerRadius='30%'
-                    outerRadius='50%'
+                    cx="50%" cy="50%" innerRadius={(winHeight <= 400 || winWidth <= 860) ? '23%':'60' } outerRadius={(winHeight <= 400 || winWidth <= 860) ? '33%':'80'}
                     data={dataset}
                     fill="#e1e8ed"
                     paddingAngle={5}
