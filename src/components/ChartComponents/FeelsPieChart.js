@@ -65,7 +65,7 @@ const FeelsPieChart = ({data}) => {
 
     return (
         <div style={{ width: '100%', height: 400, textAlign: 'center'}}>
-            <ResponsiveContainer>
+            <ResponsiveContainer width='100%' height={400}>
                 <PieChart>
                     <Pie
                     activeIndex={state.activeIndex}

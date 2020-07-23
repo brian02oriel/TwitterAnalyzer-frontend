@@ -102,16 +102,16 @@ const MainContent = ({topScrollRef}) => {
                 
                 
                 <Divider> <strong style={{color: '#1da1f2'}}> Percepción emocional </strong> </Divider>
-                <Row style={{height: '100%', width: '100%'}}>
-                    <Col md={12} sm={24} style={{ textAlign: 'center'}}>
+                <Row style={{height: '100%', width: '100%', marginBottom: '3%'}}>
+                    <Col md={12} sm={24} style={{ textAlign: 'center', padding: '3%', marginBottom: '3%'}}>
                         <FeelsPolarChart data={data.perception}/>
                     </Col>
-                    <Col md={12} sm={24} style={{ textAlign: 'center'}}>
+                    <Col md={12} sm={24} style={{ textAlign: 'center', padding: '3%', marginBottom: '3%'}}>
                         <FeelsPieChart data={data.perception}/>
                     </Col>
                 </Row>
-                <Row style={{height: '100%', width: '100%'}}>
-                    <Col md={12} mdOffset={6} sm={24} style={{ textAlign: 'center'}}>
+                <Row style={{height: '100%', width: '100%', marginTop: '3%', marginBottom: '3%'}}>
+                    <Col md={12} mdOffset={6} sm={24} style={{ textAlign: 'center'}}>   
                         <GeneralPerception data={data.perception}/>
                     </Col>
                 </Row>

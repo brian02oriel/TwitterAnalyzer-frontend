@@ -19,7 +19,7 @@ const GeneralPerception = ({data}) => {
     }
 
     return (
-        <div style={{ width: '90%', height: 400, textAlign: 'center'}}>
+        <div style={{ width: '100%', height: 400, textAlign: 'center'}}>
             <Row>
                 <Col md={24}>
                     {currentPreception.icon}

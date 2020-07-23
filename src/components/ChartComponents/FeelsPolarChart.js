@@ -12,8 +12,8 @@ const WordPolarChar = ({data}) => {
 
     return (
         <div style={{ width: '100%', height: 400, textAlign: 'center'}}>
-            <ResponsiveContainer>
-                <RadarChart data={dataset} margin={{top: 5, right: 5, bottom: 5, left: 5 }}>
+            <ResponsiveContainer width='100%' height={400}>
+                <RadarChart data={dataset} margin={{top: 10, right: 10, bottom: 10, left: 10 }}>
                     <PolarGrid />
                     <PolarAngleAxis dataKey="perception" />
                     <PolarRadiusAxis />
