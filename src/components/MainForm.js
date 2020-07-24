@@ -18,7 +18,8 @@ const MainForm = () => {
     const NotificationHandler = (funcName, title, message) =>{
         Notification[funcName]({
             title,
-            description: <small> {message} </small>
+            description: <small> {message} </small>,
+            duration: 7000
         })
         const myref = inputRef.current
         const jsref = document.getElementById('test')

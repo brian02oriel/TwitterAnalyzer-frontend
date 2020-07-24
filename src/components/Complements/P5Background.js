@@ -37,8 +37,8 @@ const P5Background = (p5) => {
 
     let drops = new Array(100)
     p5.setup = function(){
-        let width = window.innerWidth
-        let height = window.innerHeight
+        let width = window.screen.width
+        let height = window.screen.height
         p5.createCanvas(width, height, p5.WEBGL)
         let xMin = 1 - width
         let xMax = width - 1

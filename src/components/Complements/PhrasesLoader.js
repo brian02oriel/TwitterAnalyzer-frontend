@@ -45,7 +45,7 @@ const PhrasesLoader = () => {
                         <blockquote>
                             <p>{state.quote}</p>
                             <br/>
-                            <footer style={{fontSize: '1.1vmax'}}>—{state.author}</footer>
+                            <footer style={{fontSize: '1.7vmax'}}>—{state.author}</footer>
                         </blockquote>
                  </div>
             </Fade>

@@ -38,7 +38,7 @@ const MainContent = ({topScrollRef}) => {
     //console.log('state: ', state)
     //console.log('inner height: ', window.innerHeight)
     return (
-        <Content>
+        <Content  style={{border: '1px solid black'}} >
             <div ref={scrollRef}/>
             <IconButton 
                         style={{position: 'fixed', 
@@ -52,7 +52,7 @@ const MainContent = ({topScrollRef}) => {
             
             {
                 loading &&
-                <Row>
+                <Row style={{marginTop: '9%'}}>
                     <Col sm={24} style={loadingStyle}>
                         <Loader size="lg" vertical content="Buscando tweets..." />
                         <br/>
@@ -65,7 +65,7 @@ const MainContent = ({topScrollRef}) => {
             {   !loading &&
                 Object.keys(data).length !== 0 &&
                 <Fragment>
-                <div style={{ padding: '2%'}}>
+                <div style={{ padding: '2%', marginTop: '9%'}}>
                 <Row>
                     <Col sm={24} style={{margin: '1%'}}>
                         <h3> Palabra clave: <i> {keywords} </i></h3>
@@ -93,7 +93,7 @@ const MainContent = ({topScrollRef}) => {
                     <Col md={12} sm={24} style={textContainerStyle}>
                         <div style={textStyle}>
                             <p> 
-                                También podemos analizarlo desde otro punto de vista. ¿Qué tal este <strong style={{color: '#1da1f2'}}> Bar Chart </strong> de las palabras más utilizadas
+                                También podemos visualizarlo de otra manera. ¿Qué tal este <strong style={{color: '#1da1f2'}}> Bar Chart </strong> de las palabras más utilizadas
                                 en los tweets relacionados a su búsqueda?
                             </p>
                         </div>
