@@ -63,7 +63,6 @@ const FeelsPieChart = ({data}) => {
     let dataset = [{'perception': 'positiva', 'count': data.positive + data.very_positive}, {'perception': 'negativa', 'count': data.negative + data.very_negative}, {'perception': 'neutral', 'count': data.neutral}]
     const winHeight = window.screen.height
     const winWidth = window.screen.width
-      console.log({winHeight, winWidth})
     return (
         <div style={{ width: '100%', height: 400, textAlign: 'center',  display: 'flex',
         flexDirection: 'column',

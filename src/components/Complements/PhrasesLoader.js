@@ -28,7 +28,7 @@ const PhrasesLoader = () => {
 
     useEffect(()=>{
         const manageAnimation = async () =>{
-            for(let i=0; i<10; i++){
+            while(true){
                 let index = Math.floor(Math.random() * (quotes.length - 1))
                 await timeout(2000, index, true)
                 await timeout(10000, index, false)
@@ -43,9 +43,9 @@ const PhrasesLoader = () => {
              <Fade in={state.show} transitionAppear={true} timeout={1000}>
                  <div style={{textAlign: 'center'}}>
                         <blockquote>
-                            <p>{state.quote}</p>
+                            <p>"{state.quote}"</p>
                             <br/>
-                            <footer style={{fontSize: '1.7vmax'}}>—{state.author}</footer>
+                            <footer style={{fontSize: '1.5vmax'}}>—{state.author}</footer>
                         </blockquote>
                  </div>
             </Fade>

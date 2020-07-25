@@ -5,7 +5,6 @@ import {
 
   
 const WordPolarChar = ({data}) => {
-    console.log(data)
     let dataset = [{'perception': 'neutral', 'count': data.neutral}, 
     {'perception': 'positiva', 'count': data.positive}, {'perception': 'muy positiva', 'count': data.very_positive},
     {'perception': 'muy negativa', 'count': data.very_negative}, {'perception': 'negativa', 'count': data.negative}]

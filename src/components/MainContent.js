@@ -38,7 +38,7 @@ const MainContent = ({topScrollRef}) => {
     //console.log('state: ', state)
     //console.log('inner height: ', window.innerHeight)
     return (
-        <Content  style={{border: '1px solid black'}} >
+        <Content>
             <div ref={scrollRef}/>
             <IconButton 
                         style={{position: 'fixed', 
@@ -146,8 +146,8 @@ const MainContent = ({topScrollRef}) => {
                         <div style={textStyle2}>
                             <p> 
                             Si te da curiosidad o sólo quieres perder el tiempo, 
-                            te invito a probar este analizador para que sorprendas con 
-                            toda la información que se puede encontrar si se sabe buscar bien.
+                            te invito a probar este analizador para que te sorprendas con 
+                            toda la información que puedes encontrar.
                             </p>
                         </div>
                     </Col>
