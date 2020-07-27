@@ -21,9 +21,9 @@ const MainForm = () => {
             description: <small> {message} </small>,
             duration: 7000
         })
-        const myref = inputRef.current
+        //const myref = inputRef.current
         const jsref = document.getElementById('test')
-        console.log({myref, jsref})
+        //console.log({myref, jsref})
         jsref.focus()
 
     }
@@ -31,7 +31,7 @@ const MainForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         let regex = new RegExp('^([a-zA-Z-.0-9]){1,20}')
-        console.log(regex.test(localState.keywords))
+        //console.log(regex.test(localState.keywords))
         if(localState.keywords !== ''){
             if(regex.test(localState.keywords)){
                 const API_URL = process.env.REACT_APP_FLASK_API

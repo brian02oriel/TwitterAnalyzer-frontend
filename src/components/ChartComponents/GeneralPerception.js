@@ -10,7 +10,7 @@ const GeneralPerception = ({data}) => {
     {icon:  <NegativePerception />, text: 'negativa'}]
 
     let currentPreception = {}
-    if(data.very_negative < data.neutral || data.very_positive < data.neutral){
+    if(data.very_negative < data.neutral && data.very_positive < data.neutral){
         currentPreception = perceptions[1]
     } else if((data.positive + data.very_positive) > (data.negative + data.very_negative)){
         currentPreception = perceptions[0]
