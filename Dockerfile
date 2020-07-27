@@ -9,7 +9,7 @@ COPY package.json /usr/src/app
 
 # adding env variable
 ARG REACT_APP_FLASK_API
-ENV REACT_APP_FLASK_API "http://3.14.134.91:5000/api/twitter"
+ENV REACT_APP_FLASK_API "http://3.22.125.134:5000/api/twitter"
 
 # prepare the container for building react
 RUN npm install --silent
