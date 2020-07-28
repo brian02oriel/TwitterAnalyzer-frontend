@@ -37,6 +37,8 @@ const MainContent = ({topScrollRef}) => {
 
     //console.log('state: ', state)
     //console.log('inner height: ', window.innerHeight)
+    const winHeight = window.screen.height
+    const winWidth = window.screen.width
     return (
         <Content>
             <div ref={scrollRef}/>
@@ -52,7 +54,7 @@ const MainContent = ({topScrollRef}) => {
             
             {
                 loading &&
-                <Row style={{marginTop: '9%'}}>
+                <Row style={{marginTop: '9%', padding: (winWidth <= 400 || winHeight <= 860) ? '3%':0}}>
                     <Col sm={24} style={loadingStyle}>
                         <Loader size="lg" vertical content="Buscando tweets..." />
                         <br/>
@@ -144,10 +146,11 @@ const MainContent = ({topScrollRef}) => {
                 <Row>
                     <Col md={12} sm={24} style={textContainerStyle2}>
                         <div style={textStyle2}>
-                            <p> 
-                            Si te da curiosidad o sólo quieres perder el tiempo, 
-                            te invito a probar este analizador para que te sorprendas con 
-                            toda la información que puedes encontrar.
+                            <p>
+                            De esta manera podemos conocer más a fondo a nuestros clientes o bien
+                            entender un poco más cómo reacciona la sociedad ante un tema en específico.
+                            Esta es la información que se puede obtener de redes sociales como Twitter,
+                            y que permite crear enfoques, arquetipos y objetivos para un producto o servicio.
                             </p>
                         </div>
                     </Col>

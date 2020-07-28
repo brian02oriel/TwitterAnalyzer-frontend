@@ -8,13 +8,15 @@ const WordPolarChar = ({data}) => {
     let dataset = [{'perception': 'neutral', 'count': data.neutral}, 
     {'perception': 'positiva', 'count': data.positive}, {'perception': 'muy positiva', 'count': data.very_positive},
     {'perception': 'muy negativa', 'count': data.very_negative}, {'perception': 'negativa', 'count': data.negative}]
+    const winHeight = window.screen.height
+    const winWidth = window.screen.width
 
     return (
         <div style={{ width: '100%', height: 400, textAlign: 'center',  display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center', padding: '10px'}}>
-            <ResponsiveContainer width={600} height="80%">
+            <ResponsiveContainer width={(winWidth <= 400 || winHeight <= 860) ? 350: 600} height={(winWidth <= 400 || winHeight <= 860) ? '65%':'80%'}>
                 <RadarChart data={dataset} margin={{top: 10, right: 10, bottom: 10, left: 10 }}>
                     <PolarGrid />
                     <PolarAngleAxis dataKey="perception" />
