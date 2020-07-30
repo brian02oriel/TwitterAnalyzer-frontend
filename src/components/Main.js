@@ -25,8 +25,8 @@ const Main = (props) => {
 
 const mainStyles = {
     containerStyle: {
-        /*width: 'auto',
-        height: 'auto',*/
+        width: '100%',
+        height: '100%',
         //border: '1px solid black',
         /*display: 'flex',
         flexDirection: 'column',

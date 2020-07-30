@@ -23,7 +23,10 @@ const MainContent = ({topScrollRef}) => {
 
     useEffect(() =>{
         if(loading){
-            scrollRef.current.scrollIntoView({ behavior: "smooth" })
+            if(scrollRef.current != null) {
+                scrollRef.current.scrollIntoView({ behavior: "smooth" })
+            }
+            
         }
         
     })
@@ -40,7 +43,7 @@ const MainContent = ({topScrollRef}) => {
     const winHeight = window.screen.height
     const winWidth = window.screen.width
     return (
-        <Content>
+        <Content style={{clear: 'both'}}>
             <div ref={scrollRef}/>
             <IconButton 
                         style={{position: 'fixed', 
@@ -67,7 +70,7 @@ const MainContent = ({topScrollRef}) => {
             {   !loading &&
                 Object.keys(data).length !== 0 &&
                 <Fragment>
-                <div style={{ padding: '2%', marginTop: (winWidth <= 400 || winHeight <= 860) ? '12%': '9%'}}>
+                <div style={{ padding: '2%'/*, marginTop: (winWidth <= 400 || winHeight <= 860) ? '12%': '9%'*/}}>
                 <Row>
                     <Col sm={24} style={{margin: '1%'}}>
                         <h3> Palabra clave: <i> {keywords} </i></h3>
