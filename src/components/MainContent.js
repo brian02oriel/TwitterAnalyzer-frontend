@@ -67,7 +67,7 @@ const MainContent = ({topScrollRef}) => {
             {   !loading &&
                 Object.keys(data).length !== 0 &&
                 <Fragment>
-                <div style={{ padding: '2%', marginTop: '9%'}}>
+                <div style={{ padding: '2%', marginTop: (winWidth <= 400 || winHeight <= 860) ? '12%': '9%'}}>
                 <Row>
                     <Col sm={24} style={{margin: '1%'}}>
                         <h3> Palabra clave: <i> {keywords} </i></h3>
@@ -149,8 +149,6 @@ const MainContent = ({topScrollRef}) => {
                             <p>
                             De esta manera podemos conocer más a fondo a nuestros clientes o bien
                             entender un poco más cómo reacciona la sociedad ante un tema en específico.
-                            Esta es la información que se puede obtener de redes sociales como Twitter,
-                            y que permite crear enfoques, arquetipos y objetivos para un producto o servicio.
                             </p>
                         </div>
                     </Col>
