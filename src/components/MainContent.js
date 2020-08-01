@@ -20,12 +20,14 @@ const MainContent = ({topScrollRef}) => {
     const state = useContext(stateContext)
 
     const { loading, keywords, data } = state
-
+    
     useEffect(() =>{
         if(loading){
-            if(scrollRef.current != null) {
-                scrollRef.current.scrollIntoView({ behavior: "smooth" })
-            }
+            setTimeout(window.scrollTo({left: 0, top: window.screen.height, behavior: 'smooth'}), 100)
+            //window.scrollTo({left: 0, top: window.screen.height, behavior: 'smooth'})
+            /*if(scrollRef.current != null) {
+                scrollRef.current.scrollIntoView({ behavior: "smooth"})
+            }*/
             
         }
         
@@ -57,7 +59,7 @@ const MainContent = ({topScrollRef}) => {
             
             {
                 loading &&
-                <Row style={{marginTop: '9%', padding: (winWidth <= 400 || winHeight <= 860) ? '3%':0}}>
+                <Row style={{marginTop: '9%'/*, padding: (winWidth <= 400 || winHeight <= 860) ? '3%':0*/}}>
                     <Col sm={24} style={loadingStyle}>
                         <Loader size="lg" vertical content="Buscando tweets..." />
                         <br/>
@@ -70,7 +72,7 @@ const MainContent = ({topScrollRef}) => {
             {   !loading &&
                 Object.keys(data).length !== 0 &&
                 <Fragment>
-                <div style={{ padding: '2%'/*, marginTop: (winWidth <= 400 || winHeight <= 860) ? '12%': '9%'*/}}>
+                <div style={{ padding: '2%'/*, marginTop: '2%'*/, marginTop: (winWidth <= 500 || winHeight <= 860) ? '5%': '2%'}}>
                 <Row>
                     <Col sm={24} style={{margin: '1%'}}>
                         <h3> Palabra clave: <i> {keywords} </i></h3>

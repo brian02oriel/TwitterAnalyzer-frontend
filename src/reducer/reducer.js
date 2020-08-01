@@ -3,6 +3,7 @@ export const initialState = {
     loading: false,
     data: {},
     keywords: '',
+    scrollTopReference: '',
     scrollPosition: window.pageYOffset
 }
 

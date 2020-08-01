@@ -13,9 +13,9 @@ const Main = (props) => {
        <Container style={containerStyle}>
             <div ref={topScrollRef} />
             <Suspense fallback={<Placeholder.Graph active style={{ width: '100vw', height: '100vh'}}/>}>
-                <MainHeader/>
+                <MainHeader style={{overflow: 'hidden'}}/>
             </Suspense>
-            <MainContent topScrollRef={topScrollRef}/>
+            <MainContent topScrollRef={topScrollRef} style={{ clear: 'both'}}/>
             <Suspense fallback={<Placeholder.Paragraph> </Placeholder.Paragraph>}>
                 <MainFooter/>
             </Suspense>
